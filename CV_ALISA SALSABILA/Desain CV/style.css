@@ -1,0 +1,103 @@
+/* DESAIN 3: COSMOS - tata letak ala CV profesional, banner galaxy */
+:root {
+  --paper: #F7F3FC; --ink: #3A2F5E; --ink-soft: #6C628F; --line: #E7DEF5;
+  --deep: #2E2459; --violet: #6B58B0;
+  --lilac: #DCCBF5; --pink: #FFD3E2; --blue: #CBE5FF; --yellow: #FFF0B8;
+}
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--ink); background: var(--paper); line-height: 1.7; }
+h1, h2, h3, .brand { font-family: 'DM Serif Display', serif; font-weight: 400; }
+h2, h3 { color: var(--deep); }
+.muted { color: var(--ink-soft); }
+.section-title { font-size: 1.7rem; margin-bottom: .6rem; }
+.section-title::after { content: ""; display: block; width: 48px; height: 3px; margin-top: .4rem; border-radius: 3px; background: linear-gradient(90deg, var(--pink), var(--blue)); }
+section { scroll-margin-top: 80px; }
+
+/* Navbar */
+.navbar { background: rgba(46,36,89,.96); backdrop-filter: blur(8px); }
+.brand { color: #fff; font-size: 1.3rem; text-decoration: none; }
+.brand i { color: var(--yellow); }
+.navbar-nav { flex-wrap: wrap; justify-content: center; gap: .1rem; }
+.navbar .nav-link { color: #D8CEF2; font-size: .9rem; border-radius: 50rem; padding: .35rem .85rem; }
+.navbar .nav-link:hover, .navbar .nav-link:focus-visible { background: rgba(255,255,255,.14); color: #fff; }
+
+/* Banner galaxy */
+.banner {
+  position: relative; overflow: hidden; color: #fff; padding: 3.5rem 0 9rem;
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 90px 100px, #FFE3EF, transparent),
+    radial-gradient(1px 1px at 150px 50px, #D6E6FF, transparent),
+    linear-gradient(120deg, #2A2050 0%, #4F3F94 55%, #A97BC6 100%);
+  background-size: 180px 140px, 180px 140px, 180px 140px, 100% 100%;
+}
+.banner h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); color: #fff; }
+.banner .lead { color: #E6DEFA; max-width: 520px; font-size: 1.05rem; }
+.eyebrow { color: var(--yellow); font-weight: 500; margin-bottom: .4rem; }
+.nebula { position: absolute; border-radius: 50%; filter: blur(30px); pointer-events: none; }
+.nebula.n1 { width: 420px; height: 420px; right: -100px; top: -140px; background: radial-gradient(circle, rgba(255,170,210,.5), transparent 65%); }
+.planet { position: absolute; border-radius: 50%; }
+.planet.saturn { width: 54px; height: 54px; right: 12%; bottom: 3.5rem; background: radial-gradient(circle at 30% 30%, #FFF6CC, #F5D77A); }
+.planet.saturn::after { content: ""; position: absolute; left: 50%; top: 50%; width: 160%; height: 38%; border: 3px solid rgba(255,211,226,.9); border-radius: 50%; transform: translate(-50%,-50%) rotate(-22deg); }
+.planet.small { width: 20px; height: 20px; right: 28%; top: 2rem; background: radial-gradient(circle at 30% 30%, #E2F0FF, #8FB8F0); }
+.moon { position: absolute; width: 40px; height: 40px; left: 4%; bottom: 3rem; border-radius: 50%; box-shadow: inset -12px -5px 0 0 var(--yellow); }
+
+/* Tata letak: kartu menimpa banner */
+.main-wrap { margin-top: -6.5rem; position: relative; z-index: 2; padding-bottom: 2rem; }
+.card-soft { background: #fff; border: 1px solid var(--line); border-radius: 1.25rem; box-shadow: 0 10px 30px rgba(70, 50, 130, .1); }
+.avatar { width: 160px; aspect-ratio: 1; object-fit: cover; border-radius: 50%; border: 6px solid #fff; box-shadow: 0 0 0 3px var(--lilac), 0 10px 30px rgba(107,88,176,.3); }
+
+.info-row, .soft-skill { display: flex; gap: .9rem; align-items: center; padding: .6rem 0; }
+.soft-skill { align-items: flex-start; }
+.info-row { border-bottom: 1px dashed var(--line); }
+.info-row:last-child { border-bottom: 0; }
+.info-icon { width: 40px; height: 40px; flex: none; border-radius: 12px; display: grid; place-items: center; font-size: 1.05rem; color: var(--deep); background: var(--lilac); }
+.info-row:nth-child(2) .info-icon, .soft-skill:nth-of-type(2) .info-icon { background: var(--pink); }
+.info-row:nth-child(3) .info-icon, .soft-skill:nth-of-type(3) .info-icon { background: var(--blue); }
+.info-row:nth-child(4) .info-icon, .soft-skill:nth-of-type(4) .info-icon { background: var(--yellow); }
+.info-label { font-size: .78rem; color: var(--ink-soft); line-height: 1.2; }
+.soft-skill .muted { font-size: .88rem; }
+.badge-soft { background: var(--yellow); color: #6B5A1E; font-weight: 600; border-radius: 50rem; padding: .35em .8em; }
+.link-soft { color: var(--violet); text-decoration: none; font-weight: 600; }
+.link-soft:hover { color: var(--deep); }
+#pengalaman .card-soft { height: 100%; }
+
+/* Tombol */
+.btn-main { background: var(--deep); color: #fff; font-weight: 600; border: 0; border-radius: .8rem; padding: .6rem 1.2rem; }
+.btn-main:hover, .btn-main:focus-visible { background: #241B4A; color: #fff; }
+.btn-ghost { background: #fff; color: var(--deep); border: 1px solid var(--lilac); border-radius: .8rem; padding: .6rem 1.2rem; font-weight: 600; }
+.btn-ghost:hover, .btn-ghost:focus-visible { background: var(--paper); color: var(--deep); }
+
+/* Timeline */
+.timeline { border-left: 3px solid var(--lilac); margin-left: .6rem; padding-left: 1.8rem; }
+.timeline-item { position: relative; margin-bottom: 1.4rem; }
+.timeline-item:last-child { margin-bottom: 0; }
+.timeline-item::before { content: ""; position: absolute; left: -2.55rem; top: .45rem; width: 17px; height: 17px; border-radius: 50%; background: var(--pink); border: 3px solid #fff; box-shadow: 0 0 0 2px var(--lilac); }
+.timeline-year { font-weight: 700; color: var(--violet); font-size: .88rem; }
+
+/* Progress */
+.progress { height: .5rem; background: var(--line); border-radius: 50rem; }
+.progress-bar { border-radius: 50rem; background: linear-gradient(90deg, var(--violet), #E58FB5); }
+.small-bars { font-size: .92rem; }
+
+footer { padding: 2rem 0; font-size: .9rem; }
+
+/* Galeri */
+.gallery-item { display: block; position: relative; border-radius: 1.1rem; overflow: hidden; box-shadow: 0 6px 24px rgba(20, 12, 50, .18); }
+.gallery-item img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; transition: transform .3s; }
+.gallery-item:hover img, .gallery-item:focus-visible img { transform: scale(1.05); }
+.gallery-cap { position: absolute; inset: auto 0 0 0; padding: 1.4rem .9rem .6rem; font-size: .85rem; font-weight: 600; color: #fff; background: linear-gradient(transparent, rgba(30, 20, 70, .8)); }
+
+/* Lightbox tanpa JavaScript: tampil saat id-nya menjadi :target */
+.lightbox { display: none; position: fixed; inset: 0; z-index: 2000; align-items: center; justify-content: center; padding: 1rem; }
+.lightbox:target { display: flex; }
+.lb-bg { position: absolute; inset: 0; background: rgba(18, 12, 40, .92); }
+.lb-fig { position: relative; margin: 0; max-width: min(1000px, 100%); text-align: center; }
+.lb-fig img { max-width: 100%; max-height: 78vh; border-radius: 1rem; border: 6px solid #fff; }
+.lb-fig figcaption { color: #fff; margin-top: .8rem; }
+.lb-btn { position: absolute; width: 46px; height: 46px; display: grid; place-items: center; border-radius: 50%; background: #fff; color: #3A2F5E; text-decoration: none; font-size: 1.1rem; }
+.lb-btn:hover, .lb-btn:focus-visible { background: #FFEFB0; color: #3A2F5E; }
+.lb-close { top: 1rem; right: 1rem; }
+.lb-prev { left: .75rem; top: 50%; transform: translateY(-50%); }
+.lb-next { right: .75rem; top: 50%; transform: translateY(-50%); }
+a:focus-visible, .btn:focus-visible { outline: 3px solid #BFA8F0; outline-offset: 2px; }
